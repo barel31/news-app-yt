@@ -1,4 +1,3 @@
-import React from 'react';
 import ArticleReadMoreBtn from './ArticleReadMoreBtn';
 import LiveTimestamp from './LiveTimestamp';
 
