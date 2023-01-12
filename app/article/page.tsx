@@ -11,6 +11,9 @@ function ArticlePage({ searchParams }: Props) {
 		(searchParams && Object.entries(searchParams).length === 0) ||
 		!searchParams
 	) {
+		console.log('article not found');
+		console.log({ searchParams });
+
 		return notFound();
 	}
 
@@ -39,7 +42,10 @@ function ArticlePage({ searchParams }: Props) {
 						<h2 className="font-bold pl-4">
 							Source: {article.source || 'unknown'}
 						</h2>
-						<LiveTimestamp classes='pl-4' time={article.published_at} />
+						<LiveTimestamp
+							classes="pl-4"
+							time={article.published_at}
+						/>
 					</div>
 
 					<p className="pt-4">{article.description}</p>

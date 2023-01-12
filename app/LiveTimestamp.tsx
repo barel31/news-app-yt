@@ -10,9 +10,13 @@ type Props = {
 
 function LiveTimestamp({ time, classes }: Props) {
 	const [rawTime, setRawTime] = useState(false);
+    
+	if (!time) return null;
 
 	return (
-		<p className={`cursor-help ${classes}`} onClick={() => setRawTime(!rawTime)}>
+		<p
+			className={`cursor-help ${classes}`}
+			onClick={() => setRawTime(!rawTime)}>
 			{rawTime ? time : <TimeAgo date={time} />}
 		</p>
 	);
