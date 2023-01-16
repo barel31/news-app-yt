@@ -10,8 +10,9 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "encoding": "^0.1.13",
     "graphql-request": "^5.1.0",
-    "next": "latest",
+    "next": "^13.1.2",
     "next-themes": "^0.2.1",
+    "query-string": "^8.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-timeago": "^7.1.0"

@@ -2,23 +2,39 @@
 
 import { notFound } from 'next/navigation';
 import LiveTimestamp from '../LiveTimestamp';
+import { useSearchParams } from 'next/navigation';
 
 type Props = {
 	searchParams?: Article;
 };
 
 function ArticlePage({ searchParams }: Props) {
-	if (
-		(searchParams && Object.entries(searchParams).length === 0) ||
-		!searchParams
-	) {
-		console.log('article not found');
-		console.log({ searchParams });
+	const data = useSearchParams();
+	const article: Article = {
+		author: data.get('author'),
+		category: data.get('category')!,
+		country: data.get('country')!,
+		description: data.get('description')!,
+		image: data.get('image'),
+		language: data.get('language')!,
+		published_at: data.get('published_at')!,
+		source: data.get('source')!,
+		title: data.get('title')!,
+		url: data.get('url')!,
+	};
 
-		return notFound();
-	}
+	// if (
+	// 	(searchParams && Object.entries(searchParams).length === 0) ||
+	// 	!searchParams
+	// ) {
+	// 	console.log('article not found');
+	// 	console.log({ searchParams });
 
-	const article: Article = searchParams;
+	// 	return notFound();
+	// }
+
+	// const article: Article = searchParams;
+	console.log(article.published_at);
 
 	return (
 		<article>

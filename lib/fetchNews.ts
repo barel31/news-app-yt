@@ -78,7 +78,7 @@ const fetchNews = async (
 	// Sort function by images vs not images present
 	const data = sortNewsByImage(newsResponse.data?.myQuery);
 
-	return data;
+	return data || 'fetch error';
 };
 
 export default fetchNews;
