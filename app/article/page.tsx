@@ -1,27 +1,14 @@
-'use client';
-
 import { notFound } from 'next/navigation';
 import LiveTimestamp from '../LiveTimestamp';
-import { useSearchParams } from 'next/navigation';
+import queryString from 'query-string';
 
-type Props = {
-	searchParams?: Article;
-};
+// type Props = {
+// 	searchParams?: Article;
+// };
 
-function ArticlePage({ searchParams }: Props) {
-	const data = useSearchParams();
-	const article: Article = {
-		author: data.get('author'),
-		category: data.get('category')!,
-		country: data.get('country')!,
-		description: data.get('description')!,
-		image: data.get('image'),
-		language: data.get('language')!,
-		published_at: data.get('published_at')!,
-		source: data.get('source')!,
-		title: data.get('title')!,
-		url: data.get('url')!,
-	};
+function ArticlePage(/*{ searchParams }: Props*/) {
+	const articleNoTypes: any = queryString.parse(location.search);
+	const article: Article = articleNoTypes;
 
 	// if (
 	// 	(searchParams && Object.entries(searchParams).length === 0) ||
@@ -34,7 +21,6 @@ function ArticlePage({ searchParams }: Props) {
 	// }
 
 	// const article: Article = searchParams;
-	console.log(article.published_at);
 
 	return (
 		<article>
