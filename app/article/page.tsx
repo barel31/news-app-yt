@@ -1,26 +1,45 @@
-import { notFound } from 'next/navigation';
+'use client';
+
+// import { notFound } from 'next/navigation';
 import LiveTimestamp from '../LiveTimestamp';
-import queryString from 'query-string';
+// import queryString from 'query-string';
+import { useSearchParams } from 'next/navigation';
 
 // type Props = {
 // 	searchParams?: Article;
 // };
 
 function ArticlePage(/*{ searchParams }: Props*/) {
+	//? This approach is work, but is not preferred.
+	const data = useSearchParams();
+	const article: Article = {
+		author: data.get('author'),
+		category: data.get('category')!,
+		country: data.get('country')!,
+		description: data.get('description')!,
+		image: data.get('image'),
+		language: data.get('language')!,
+		published_at: data.get('published_at')!,
+		source: data.get('source')!,
+		title: data.get('title')!,
+		url: data.get('url')!,
+	};
+
+	/*! Error - no location found even with use client
 	const articleNoTypes: any = queryString.parse(location.search);
 	const article: Article = articleNoTypes;
 
-	// if (
-	// 	(searchParams && Object.entries(searchParams).length === 0) ||
-	// 	!searchParams
-	// ) {
-	// 	console.log('article not found');
-	// 	console.log({ searchParams });
+	if (
+		(searchParams && Object.entries(searchParams).length === 0) ||
+		!searchParams
+	) {
+		console.log('article not found');
+		console.log({ searchParams });
 
-	// 	return notFound();
-	// }
+		return notFound();
+	}
 
-	// const article: Article = searchParams;
+	 const article: Article = searchParams;*/
 
 	return (
 		<article>
