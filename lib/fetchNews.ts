@@ -1,5 +1,6 @@
 import { gql } from 'graphql-request';
 import sortNewsByImage from './sortNewsByImage';
+import { decode } from 'html-entities';
 
 const fetchNews = async (
 	category?: Category | string,
@@ -75,10 +76,12 @@ const fetchNews = async (
 
 	const newsResponse = await res.json();
 
+	Object.keys(newsResponse).forEach((v) => (newsResponse[v] = decode(newsResponse[v])));
+
 	// Sort function by images vs not images present
 	const data = sortNewsByImage(newsResponse.data?.myQuery);
 
-	return data || 'fetch error';
+	return data;
 };
 
 export default fetchNews;

@@ -1,4 +1,8 @@
 export default function sortNewsByImage(news: NewsResponse) {
+	if (!news?.data) {
+		return null;
+	}
+
 	const newsWithImage = news.data.filter((item) => item.image);
 	const newsWithoutImage = news.data.filter((item) => !item.image);
 

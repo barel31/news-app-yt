@@ -10,14 +10,21 @@ type Props = {
 
 function LiveTimestamp({ time, classes }: Props) {
 	const [rawTime, setRawTime] = useState(false);
-    
+
 	if (!time) return null;
+
+	const date = new Date(time);
 
 	return (
 		<p
-			className={`cursor-help ${classes}`}
+			className={`cursor-help ${classes} ${rawTime && `text-xs`}`}
 			onClick={() => setRawTime(!rawTime)}>
-			{rawTime ? time : <TimeAgo date={time} />}
+			{rawTime ? (
+				date.toString()
+				// `${date.toLocaleDateString()} - ${date.toLocaleTimeString()}`
+			) : (
+				<TimeAgo date={time} />
+			)}
 		</p>
 	);
 }
