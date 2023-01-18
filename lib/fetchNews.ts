@@ -12,17 +12,14 @@ const fetchNews = async (
 		query MyQuery(
 			$access_key: String!
 			$categories: String!
-			# $countries: String!
 			$keywords: String
 		) {
 			myQuery(
 				access_key: $access_key
 				categories: $categories
-				# countries: $countries
-				countries: "us"
+				# countries: "us"
 				sort: "published_desc"
-				# sources: "en,he"
-				keywords: $keywords
+				keywords: $keywords # sources: "en"
 			) {
 				data {
 					author
@@ -71,17 +68,24 @@ const fetchNews = async (
 	console.log(
 		'LOADING NEW DATA FROM API for category >>>',
 		category,
-		keywords
+		keywords ? keywords : ''
 	);
 
 	const newsResponse = await res.json();
 
-	Object.keys(newsResponse).forEach((v) => (newsResponse[v] = decode(newsResponse[v])));
+	if (!newsResponse?.data) return;
 
 	// Sort function by images vs not images present
-	const data = sortNewsByImage(newsResponse.data?.myQuery);
+	const sorted: any = sortNewsByImage(newsResponse.data?.myQuery);
 
-	return data;
+	// Decode results
+	Object.keys(sorted.data).forEach((article) => {
+		Object.keys(sorted.data[article]).forEach((key) => {
+			sorted.data[article][key] = decode(sorted.data[article][key]);
+		});
+	});
+
+	return sorted;
 };
 
 export default fetchNews;

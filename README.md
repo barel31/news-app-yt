@@ -1,27 +1,5 @@
-# Next.js + Tailwind CSS Example
+Introducing our brand new website news app, built with the powerful Next.js framework. Our app seamlessly integrates with the Mediastack API to bring you the latest and most relevant news from around the world. With a sleek and intuitive design, our app makes it easy for you to stay up to date on the topics that matter to you.
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+Our news is divided into categories, making it easy for you to quickly find the stories that interest you. We've also included a powerful search function, allowing you to easily find specific news articles or topics. The app is also styled with the popular Tailwind CSS framework, giving it a modern and polished look and feel.
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Whether you're a busy professional looking to stay informed, or a news junkie looking for your next fix, our website news app has got you covered. So why wait? Download our app today and stay ahead of the curve with the latest news and information.

@@ -9,6 +9,7 @@ type Article = {
 	source: string;
 	title: string;
 	url: string;
+	[key: string]: string;
 };
 
 type Pagination = {

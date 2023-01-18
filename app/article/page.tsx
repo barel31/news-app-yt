@@ -2,9 +2,10 @@ export const dynamic = 'force-dynamic'; // searchParams fix
 
 import { notFound } from 'next/navigation';
 import LiveTimestamp from '../LiveTimestamp';
+import { decode } from 'html-entities';
 
 type Props = {
-	searchParams: Article;
+	searchParams?: Article;
 };
 
 function ArticlePage({ searchParams }: Props) {
@@ -19,6 +20,7 @@ function ArticlePage({ searchParams }: Props) {
 	}
 
 	const article: Article = searchParams;
+
 
 	return (
 		<article>
